@@ -51,5 +51,6 @@ namespace MvcCv.Controllers
             repo.TUpdate(x);
             return RedirectToAction("Index");
         }
+      
     }
 }
