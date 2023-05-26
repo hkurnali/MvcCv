@@ -1,0 +1,29 @@
+﻿@model MvcCv.Models.Entity.Tbliletisim
+@{
+    ViewBag.Title = "Getiletisim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+
+<h3 class="container"> Gelen Mesaj</h3>
+<form method="get" class="form-control-feedback">
+    @Html.HiddenFor(x => x.ID)
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    <br />
+    <label>E-Mail</label>
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    <label>Konu</label>
+    @Html.TextBoxFor(x => x.Konu, new { @class = "form-control" })
+    <br />
+    <label>Mesaj</label>
+    @Html.TextAreaFor(x => x.Mesaj, new { @class = "form-control" })
+    <br />
+
+
+</form>
+<a class="btn btn-info" href="/ietisim/Index">Mesajlar</a>
+

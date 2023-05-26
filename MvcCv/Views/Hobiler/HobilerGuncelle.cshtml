@@ -1,0 +1,25 @@
+﻿﻿@model MvcCv.Models.Entity.TblHobilerim
+@{
+    ViewBag.Title = "HobilerGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+
+<h3 class="container"> İlgi Alanı Güncelleme Sayfası</h3>
+<form method="post" class="form-control-feedback">
+    @Html.HiddenFor(x => x.ID)
+    <label>Açıklama 1</label>
+    @Html.TextAreaFor(x => x.Aciklama1, new { @class = "form-control" })
+    <br />
+    <label>Açıklama 2</label>
+    @Html.TextAreaFor(x => x.Aciklama2, new { @class = "form-control" })
+    <br />
+
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+
+

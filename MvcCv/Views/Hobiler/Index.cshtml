@@ -1,0 +1,40 @@
+﻿@model List<MvcCv.Models.Entity.TblHobilerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<br />
+<br />
+<h2 class="container">Hobilerim</h2>
+<table class="table ui-sortable-handle container">
+    <tr>
+        <th>#</th>
+        <th>Açıklama 1</th>
+        <th>Açıklama 2</th>
+
+
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Aciklama1</td>
+            <td>@item.Aciklama2</td>
+
+
+            <td><a href="/Hobiler/HobilerSil/@item.ID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>Sil</a></td>
+            <td><a href="/Hobiler/HobilerGuncelle/@item.ID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<div class="container">
+    <a href="/Hobiler/HobilerEkle/" class="btn btn-primary">Yeni Hobi  Ekle</a>
+</div>
+
+
