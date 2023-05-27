@@ -1,8 +1,64 @@
-﻿
+﻿﻿@model List<MvcCv.Models.Entity.TblHakkimda>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
 }
 
-<h2>Index</h2>
+<br />
+<br />
+<h2 class="container">Hakkımda</h2>
+<table class="table table-bordered container">
+    <tr>
+        <th>#</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Adres</th>
+        <th>Telefon</th>
+        <th>E-Mail</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Ad</td>
+            <td>@item.Soyad</td>
+            <td>@item.Adres</td>
+            <td>@item.Telefon</td>
+            <td>@item.Mail</td>
+            <td><a href="/Hakkimda/HakkimdaSil/@item.ID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>Sil</a></td>
+            <td><a href="/Hakkimda/HakkimdaGuncelle/@item.ID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+
+<br />
+<h2 class="container">Sosyal Medya Hesaplarım</h2>
+<table class="table table-bordered container">
+    <tr>
+        <th>#</th>
+        <th>Linkedin</th>
+        <th>GitHub</th>
+        <th>Instagram</th>
+        <th>Facebook</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <th>@item.ID </th>
+            <td><a href="@item.Linkedin" target="_blank">Linkedin</a></td>
+            <td><a href="@item.Github" target="_blank">GitHub</a></td>
+            <td><a href="@item.Instagram" target="_blank">Instagram</a></td>
+            <td><a href="@item.Facebook" target="_blank">Facebook</a></td>
+            <td><a href="/Hakkimda/SocialMediaGuncelle/@item.ID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Güncelle</a></td>
+        </tr>
+    }
+
+</table>
 

@@ -10,7 +10,7 @@ namespace MvcCv.Repostories
 {
     public class GenericRepostory<T> where T : class
     {
-         DbCvEntities db=new DbCvEntities();
+         DbCvEntities1 db=new DbCvEntities1();
 
         public List<T> List()
         {

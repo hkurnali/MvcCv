@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TblAdmin">
           <Key>
             <PropertyRef Name="ID" />
@@ -46,6 +46,10 @@
           <Property Name="Mail" Type="nvarchar" MaxLength="100" />
           <Property Name="Aciklama" Type="nvarchar(max)" />
           <Property Name="Resim" Type="nvarchar" MaxLength="100" />
+          <Property Name="Linkedin" Type="nvarchar" MaxLength="20" />
+          <Property Name="Github" Type="nvarchar" MaxLength="20" />
+          <Property Name="Instagram" Type="nvarchar" MaxLength="20" />
+          <Property Name="Facebook" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="TblHobilerim">
           <Key>
@@ -92,7 +96,8 @@
           <EntitySet Name="TblSertifikalarim" EntityType="Self.TblSertifikalarim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -137,6 +142,10 @@
           <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Resim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Linkedin" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Github" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Instagram" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Facebook" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblHobilerim">
           <Key>
@@ -173,7 +182,7 @@
           <Property Name="Yetenek" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Oran" Type="Byte" />
         </EntityType>
-        <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DbCvEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" />
           <EntitySet Name="TblDeneyimlerim" EntityType="Self.TblDeneyimlerim" />
           <EntitySet Name="TblEgitimlerim" EntityType="Self.TblEgitimlerim" />
@@ -188,7 +197,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DbCvModelStoreContainer" CdmEntityContainer="DbCvEntities">
+        <EntityContainerMapping StorageEntityContainer="DbCvModelStoreContainer" CdmEntityContainer="DbCvEntities1">
           <EntitySetMapping Name="TblAdmin">
             <EntityTypeMapping TypeName="DbCvModel.TblAdmin">
               <MappingFragment StoreEntitySet="TblAdmin">
@@ -232,6 +241,10 @@
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
                 <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="Linkedin" ColumnName="Linkedin" />
+                <ScalarProperty Name="Github" ColumnName="Github" />
+                <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -259,18 +272,18 @@
           <EntitySetMapping Name="TblSertifikalarim">
             <EntityTypeMapping TypeName="DbCvModel.TblSertifikalarim">
               <MappingFragment StoreEntitySet="TblSertifikalarim">
-                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TblYeteneklerim">
             <EntityTypeMapping TypeName="DbCvModel.TblYeteneklerim">
               <MappingFragment StoreEntitySet="TblYeteneklerim">
-                <ScalarProperty Name="Oran" ColumnName="Oran" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Yetenek" ColumnName="Yetenek" />
+                <ScalarProperty Name="Oran" ColumnName="Oran" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

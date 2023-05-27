@@ -1,0 +1,23 @@
+﻿﻿@model MvcCv.Models.Entity.TblAdmin
+@{
+    ViewBag.Title = "AdminGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+
+<h3 class="container"> Admin Güncelleme Sayfası</h3>
+<form method="post" class="form-control-feedback">
+    @Html.HiddenFor(x => x.ID)
+    <label>Kullanıcı Adı</label>
+    @Html.TextAreaFor(x => x.KullaniciAdi, new { @class = "form-control" })
+    <br />
+    <label>Şifre</label>
+    @Html.TextAreaFor(x => x.Sifre, new { @class = "form-control" })
+    <br />
+
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>

@@ -7,9 +7,11 @@ using MvcCv.Models.Entity;
 
 namespace MvcCv.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
-        DbCvEntities db= new DbCvEntities();
+        
+        DbCvEntities1 db= new DbCvEntities1();
         public ActionResult Index()
         {
             var degerler = db.TblHakkimda.ToList();
@@ -60,5 +62,6 @@ namespace MvcCv.Controllers
             
             return PartialView();
         }
+       
     }
 }

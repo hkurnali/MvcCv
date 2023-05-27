@@ -22,5 +22,9 @@ namespace MvcCv.Models.Entity
         public string Mail { get; set; }
         public string Aciklama { get; set; }
         public string Resim { get; set; }
+        public string Linkedin { get; set; }
+        public string Github { get; set; }
+        public string Instagram { get; set; }
+        public string Facebook { get; set; }
     }
 }
